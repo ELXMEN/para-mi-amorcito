@@ -2,58 +2,83 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Para mi amor</title>
+  <title>Feliz Primer Mes ❤️</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff9a9e, #fad0c4);
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      background: linear-gradient(to right, #ffdde1, #ee9ca7);
-      color: #333;
       padding: 50px;
+      color: #333;
     }
-
     h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 3em;
+      color: #e63946;
+      animation: aparecer 3s ease-in-out;
     }
-
     p {
-      font-size: 1.2em;
-      margin-bottom: 40px;
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 600px;
+      line-height: 1.6;
+      animation: aparecer 5s ease-in-out;
     }
-
-    a {
-      display: inline-block;
-      padding: 15px 30px;
-      font-size: 1.2em;
+    .corazon {
+      font-size: 5em;
+      animation: latido 1s infinite;
+    }
+    @keyframes latido {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    @keyframes aparecer {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    button {
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #e63946;
+      border: none;
+      border-radius: 8px;
       color: white;
-      background-color: #ff4b5c;
-      text-decoration: none;
-      border-radius: 10px;
+      font-size: 1em;
+      cursor: pointer;
       transition: 0.3s;
     }
-
-    a:hover {
-      background-color: #ff1e40;
+    button:hover {
+      background-color: #d62839;
     }
   </style>
 </head>
 <body>
+  <h1>💖 Feliz Primer Mes 💖</h1>
+  <div class="corazon">❤️</div>
+  <p>
+    Amor, hoy celebramos nuestro primer mes juntos,  
+    y quiero agradecerte por tu compañía, tu cariño y por hacerme tan feliz.  
+    Este tiempo contigo me ha enseñado lo especial que eres en mi vida,  
+    y lo afortunado que soy de tenerte a mi lado.  
+  </p>
+  <p>
+    Ojalá este sea el primero de muchos meses,  
+    recuerdos y sonrisas compartidas.  
+    ¡Te amo mucho! 💕
+  </p>
+  
+  <!-- Botón que activa la canción -->
+  <button onclick="tocarCancion()">Haz clic aquí</button>
 
-  <h1>💖 Para mi amor 💖</h1>
-  <p>Este detalle es solo para ti, con mucho cariño...</p>
-
-  <a href="#" onclick="playSong()">Haz click aquí</a>
-
-  <audio id="song" src="limon y sal.mp3"></audio>
+  <!-- Audio oculto -->
+  <audio id="miCancion" src="limon y sal.mp3"></audio>
 
   <script>
-    function playSong() {
-      const song = document.getElementById('song');
-      song.play();
-      alert("🎶 Espero que te guste esta canción 💕");
+    function tocarCancion() {
+      const audio = document.getElementById("miCancion");
+      audio.play();
+      alert("Siempre estaré contigo ❤️");
     }
   </script>
-
 </body>
 </html>
