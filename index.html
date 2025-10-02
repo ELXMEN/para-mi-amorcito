@@ -5,77 +5,55 @@
   <title>Para mi amor</title>
   <style>
     body {
-      font-family: 'Georgia', cursive;
+      font-family: Arial, sans-serif;
       text-align: center;
-      background: #ffe6f0;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      color: #333;
       padding: 50px;
     }
+
     h1 {
-      color: #d63384;
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
+
     p {
-      font-size: 18px;
-      color: #333;
+      font-size: 1.2em;
+      margin-bottom: 40px;
     }
-    button {
-      margin-top: 20px;
-      padding: 12px 25px;
-      font-size: 16px;
-      background-color: #d63384;
+
+    a {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 1.2em;
       color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
+      background-color: #ff4b5c;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: 0.3s;
     }
-    #lyrics {
-      margin-top: 30px;
-      font-size: 18px;
-      white-space: pre-line; /* respeta saltos de línea */
-      display: none;
-      color: #222;
+
+    a:hover {
+      background-color: #ff1e40;
     }
   </style>
 </head>
 <body>
+
   <h1>💖 Para mi amor 💖</h1>
-  <p>Este mes a tu lado ha sido lo más especial de mi vida.  
-  Gracias por tu amor y tu compañía. 💕</p>
-  
-  <button onclick="mostrarLetra()">Haz clic aquí</button>
-  
-  <audio id="miAudio" src="limon-y-sal.mp3"></audio>
-  <div id="lyrics"></div>
+  <p>Este detalle es solo para ti, con mucho cariño...</p>
+
+  <a href="#" onclick="playSong()">Haz click aquí</a>
+
+  <audio id="song" src="limon y sal.mp3"></audio>
 
   <script>
-    const letraCancion = `
-Voy a ser quien mejor te entienda
-Aunque a veces no me comprendas
-Aunque no siempre lo demuestre
-Te quiero tal como eres 💖
-`;
-
-    function mostrarLetra() {
-      // Ocultar el texto inicial
-      document.querySelector("h1").style.display = "none";
-      document.querySelector("p").style.display = "none";
-      document.querySelector("button").style.display = "none";
-      
-      // Reproducir música
-      document.getElementById("miAudio").play();
-      
-      // Mostrar letra con efecto de escritura
-      const letraDiv = document.getElementById("lyrics");
-      letraDiv.style.display = "block";
-      let i = 0;
-      function escribir() {
-        if (i < letraCancion.length) {
-          letraDiv.innerHTML += letraCancion.charAt(i);
-          i++;
-          setTimeout(escribir, 70); // velocidad de escritura
-        }
-      }
-      escribir();
+    function playSong() {
+      const song = document.getElementById('song');
+      song.play();
+      alert("🎶 Espero que te guste esta canción 💕");
     }
   </script>
+
 </body>
 </html>
